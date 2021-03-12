@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Membuat Kalkulator Sederhana Dengan PHP | www.malasngoding.com</title>
+    <title>Kalkulator Website</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
