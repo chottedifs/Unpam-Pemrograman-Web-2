@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+    }
+</style>
+
+<?php
+$hariIni = new DateTime();
+if (isset($_POST['submit'])) {
+    $wilayah = $_POST['nmWilayah'];
+    $positif = $_POST['jmlPositif'];
+    $dirawat = $_POST['jmlDirawat'];
+    $sembuh = $_POST['jmlSembuh'];
+    $meninggal = $_POST['jmlMeninggal'];
+    $operator = $_POST['nmOperator'];
+    $nim = $_POST['nimMahasiswa'];
+}
+
+?>
+
+<body>
+    <h1 style="text-align: center;">DATA PEMANTAUAN COVID-19 WILAYAH <?= $wilayah ?></h1>
+    <h2 style="text-align: center;">Per <?= $hariIni->format('d F Y H:i:s') ?></h2>
+    <h3 style="text-align: center;"><?= $operator ?> / <?= $nim ?></h3>
+
+    <table style="width:50%">
+        <tr>
+            <th>Positif</th>
+            <th>Dirawat</th>
+            <th>Sembuh</th>
+            <th>Meninggal</th>
+        </tr>
+        <tr>
+            <td><?= $positif ?></td>
+            <td><?= $dirawat ?></td>
+            <td><?= $sembuh ?></td>
+            <td><?= $meninggal ?></td>
+        </tr>
+    </table>
+</body>
+
+</html>
