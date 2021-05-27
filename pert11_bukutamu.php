@@ -11,9 +11,6 @@
 
     <title>Buku Tamu</title>
 </head>
-
-<body>
-
     <body>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
