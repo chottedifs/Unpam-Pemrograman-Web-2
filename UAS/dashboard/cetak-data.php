@@ -1,13 +1,17 @@
 <?php
 
-include('../db_connect.php');
-$id = $_GET['id'];
-$user = "SELECT * FROM user";
-$query = "SELECT * FROM data_covid WHERE id = $id LIMIT";
-$operator = mysqli_query($connection, $user);
-$result = mysqli_query($connection, $query);
-$data = mysqli_fetch_array($operator);
-$row = mysqli_fetch_array($result);
+    include('../db_connect.php');
+    
+    session_start();
+    if (!isset($_SESSION['username'])) {
+        header("Location: login.php");
+    }
+
+    $id = $_GET['id'];
+    $user = mysqli_query($connection, "SELECT * FROM user WHERE username = '$_SESSION[username]'");
+    $result = mysqli_query($connection, "SELECT * FROM data_covid WHERE id = '$id' LIMIT 1");
+    $data = mysqli_fetch_array($user);
+    $row = mysqli_fetch_array($result);
 
 ?>
 
@@ -42,10 +46,13 @@ $row = mysqli_fetch_array($result);
                 <img src="../assets/images/logo.png" class="mx-auto mb-3 d-block" alt="covid19" width="200">
                 <div class="judul-cetak text-center">
                     <h2 class="mt-5 mb-3">
-                        Data Pemantauan Covid-19 Wilayah <b><?= $row['wilayah'] ?></b>
+                        Data Pemantauan Covid-19
+                    </h2>
+                    <h2 class="mt-3 mb-3">
+                        Wilayah <b><?= $row['wilayah'] ?></b>
                     </h2>
                     <h3 class="mb-3">Per <?= date('d F Y H:i:s') ?></h3>
-                    <h4><b><?= $data['nama_lengkap'] ?> / <?= $data['username'] ?></b></h4>
+                    <h4><b><?= $data['nama_lengkap']  ?> / <?= $data['username'] ?></b></h4>
                 </div>
             </div>
         </div>

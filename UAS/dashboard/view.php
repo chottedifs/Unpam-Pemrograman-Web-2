@@ -62,7 +62,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Wilayah</th>
-                                <th>Kasis Terkonfirmasi</th>
+                                <th>Kasus Terkonfirmasi</th>
                                 <th>Dalam Perawatan</th>
                                 <th>Sembuh</th>
                                 <th>Meninggal</th>
@@ -76,17 +76,17 @@
                             include '../db_connect.php';
 
                             $no = 1;
-                            $query = mysqli_query($connection, "SELECT * FROM data_covid");
+                            $query = mysqli_query($connection, "SELECT * FROM data_covid ORDER BY positif DESC");
                             while ($row = mysqli_fetch_array($query)) {
                             ?>
 
                                 <tr>
                                     <td><?= $no++ ?></td>
                                     <td><?= $row['wilayah'] ?></td>
-                                    <td><?= $row['positif'] ?></td>
-                                    <td><?= $row['dirawat'] ?></td>
-                                    <td><?= $row['sembuh'] ?></td>
-                                    <td><?= $row['meninggal'] ?></td>
+                                    <td><?= number_format($row['positif']) ?></td>
+                                    <td><?= number_format($row['dirawat']) ?></td>
+                                    <td><?= number_format($row['sembuh']) ?></td>
+                                    <td><?= number_format($row['meninggal']) ?></td>
                                     <td class="text-center">
                                         <a href="edit-data.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>
                                         <a href="hapus-data.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Jul 2021 pada 09.51
+-- Waktu pembuatan: 17 Jul 2021 pada 16.19
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.2
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_covid`
+-- Database: `db_uas`
 --
 
 -- --------------------------------------------------------
@@ -36,16 +36,6 @@ CREATE TABLE `data_covid` (
   `sembuh` bigint(20) NOT NULL,
   `meninggal` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `data_covid`
---
-
-INSERT INTO `data_covid` (`id`, `wilayah`, `positif`, `dirawat`, `sembuh`, `meninggal`) VALUES
-(1, 'Nusa Tenggara Barat', 19201, 887, 18012, 1000),
-(3, 'Sumatera Utara', 19000, 8897, 9877, 9900),
-(4, 'DKI Jakarta', 689243, 90216, 589486, 9541),
-(5, 'Banten', 19812, 11201, 5210, 3019);
 
 -- --------------------------------------------------------
 
@@ -66,7 +56,11 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `nama_lengkap`, `username`, `password`) VALUES
 (1, 'Aldi Husadif', '181011400209', 'rahasia1!21'),
-(2, 'User Testing', '12345', '12345');
+(2, 'Achmad Deza Nugeraha', '181011400314', '12345678'),
+(3, 'Aditiya Firmansyah', '181011402446', '12345678'),
+(4, 'Aldo Rizky Kurniawan', '181011400274', '12345678'),
+(5, 'User Testing', '12345', '12345678'),
+(6, 'Ahmad Fachrurozi', '2016141138', '12345678');
 
 --
 -- Indexes for dumped tables
@@ -92,13 +86,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `data_covid`
 --
 ALTER TABLE `data_covid`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

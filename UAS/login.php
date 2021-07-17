@@ -17,6 +17,7 @@
     $cek = mysqli_num_rows($data);
 
     if($cek>0){
+        // $_SESSION['nama_lengkap'] = $data['nama_lengkap'];
         $_SESSION['username'] = $username;
         $_SESSION['status'] = "login";
 

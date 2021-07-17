@@ -1,5 +1,5 @@
 <?php
-    $connection = mysqli_connect("localhost","root","","db_covid");
+    $connection = mysqli_connect("localhost","root","","db_uas");
 
     // Check connection
     if (mysqli_connect_errno()){
